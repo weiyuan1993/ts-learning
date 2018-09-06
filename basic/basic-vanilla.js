@@ -1,16 +1,21 @@
-var x: number = 1;
-var y: string = "2";
-function tsPlus(a: number, b: number): number {
+const x = 1;
+const y = "2";
+
+function plus(a, b) {
   return a + b;
 }
 
-console.log(tsPlus(x, +y)); // 12
+console.log(plus(x, y)); // 12
 
-type JsonReturn = {
-  value: number;
-  type: string;
-};
-function getJSON(): Promise<JsonReturn> {
+function getPrice(price) {
+  return (price *= 8);
+}
+const price1 = 1;
+const price2 = "2";
+getPrice(price2);
+getPrice(price1, price2);
+
+function getJSON() {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "sample.json");
@@ -18,7 +23,7 @@ function getJSON(): Promise<JsonReturn> {
     xhr.addEventListener("load", () => {
       if (xhr.readyState === xhr.DONE) {
         if (xhr.status === 200) {
-          const result: JsonReturn = JSON.parse(xhr.response);
+          const result = JSON.parse(xhr.response);
           console.log(result);
           resolve(result);
         }
