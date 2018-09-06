@@ -1,5 +1,5 @@
 var x: number = 1;
-var y: string = "2";
+var y: string = "3";
 function tsPlus(a: number, b: number): number {
   return a + b;
 }

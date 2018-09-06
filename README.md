@@ -4,6 +4,8 @@
 
 ```bash
 npm install -g typescript
+tsc
+tsc -watch
 ```
 
 ## tsconfig 常用到的設定：
