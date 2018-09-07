@@ -278,8 +278,9 @@ namespace Guoshi {
 ```
 tsconfig.json 可以設定 `outFile` 來讓各檔案輸出成單一檔案。(並不是透過模組化，而是透過命名空間)
 
-import / export: 外部模組的運用 (需透過模組打包工具如 webpack or browserify)
+**import / export**: 外部模組的運用 (需透過模組打包工具如 webpack or browserify)
 
+webpack 設定可參考 source code 裡的 `webpack.config.js`
 ```javascript
 // 外部模組的運用
 export const VALUE = 0.5;
