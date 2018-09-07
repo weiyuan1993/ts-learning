@@ -18,10 +18,6 @@ class Player {
 }
 const myPlayer = new Player("inread", "DF");
 
-
-
-
-
 class Player2 implements IPlayer {
   // property
   private playMode: string;
@@ -34,6 +30,9 @@ class Player2 implements IPlayer {
   public static getPlayerState() { }
 
   public play() { }
+  pause() {
+
+  }
 
 }
 
@@ -49,3 +48,5 @@ class MobilePlayer extends Player implements MPlayer {
     this.banner = new Image();
   }
 }
+const m = new MobilePlayer();
+m.replay()

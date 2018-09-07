@@ -30,7 +30,7 @@ type GameForChild = {
 
 let myChildGameStore: Games<GameForChild> = {
   games: [],
-  addGame(game: GameForChild) {
+  addGame(game) {
     this.games.push(game);
   },
   getAll() {
@@ -46,6 +46,12 @@ type GameForAdult = {
   age: number;
   type: string;
 }
-let myAdultGame: Games<GameForAdult> = {
-
-}
+let myAdultGameStore: Games<GameForAdult> = {
+  games: [],
+  addGame(game) {
+    this.games.push(game);
+  },
+  getAll() {
+    return this.games;
+  }
+};

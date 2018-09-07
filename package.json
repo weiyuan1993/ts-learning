@@ -1,0 +1,27 @@
+{
+  "name": "ts-learning",
+  "version": "1.0.0",
+  "description": "## 環境建立",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode=development --config webpack.config.js --watch",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiyuan1993/ts-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weiyuan1993/ts-learning/issues"
+  },
+  "homepage": "https://github.com/weiyuan1993/ts-learning#readme",
+  "devDependencies": {
+    "es6-promise": "^4.2.4",
+    "ts-loader": "^5.0.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}

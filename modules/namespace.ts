@@ -2,5 +2,11 @@
 namespace Guoshi {
   const internalConst = {};
   export const VALUE = 0.5;
-  export class Main { }
+  export class Main {
+    init() {
+      console.log("init");
+    }
+  }
 }
+
+

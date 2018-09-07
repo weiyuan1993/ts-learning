@@ -19,8 +19,11 @@ const sampleObject: {
   value1: number;
   value2: string;
   value3?: any;
-  callBack: () => {};
+  callBack: Function;
 } = {
+  value1: 1,
+  value2: "a",
+  callBack: () => { }
 }
 
 // enum
@@ -39,7 +42,6 @@ var notSure: any = 4;
 notSure = "string";
 // 懶人招
 (<any>nameString) = 5;
-
 // void
 function func(): void { }
 
@@ -68,6 +70,10 @@ type JsonReturn = {
   value: number;
   type: string;
 };
+interface asdfd {
+
+}
+
 function getJSON(url: string): Promise<JsonReturn> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
@@ -86,3 +92,5 @@ function getJSON(url: string): Promise<JsonReturn> {
 }
 const jsonUrl = "sample.json";
 // getJSON(jsonUrl).then(r => { });
+
+getJSON(jsonUrl).then(r => console.log(r))

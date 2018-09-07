@@ -7,6 +7,9 @@ var Guoshi;
     var Main = /** @class */ (function () {
         function Main() {
         }
+        Main.prototype.init = function () {
+            console.log("init");
+        };
         return Main;
     }());
     Guoshi.Main = Main;
