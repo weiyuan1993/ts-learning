@@ -53,7 +53,7 @@ npm install --save @types/lodash
 
 可先到 [TypeScript Playground](http://www.typescriptlang.org/play/) 遊玩
 
-1. basic type
+1. basic
 2. interface / type
 3. class
 4. import / export
