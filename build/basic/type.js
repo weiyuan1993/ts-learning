@@ -10,6 +10,8 @@ var idList = [1, 2, 3];
 var list = [1, 2, 3];
 list.push(5);
 // list.push("5");
+// object type
+var sampleObject = {};
 // enum
 var PlayMode;
 (function (PlayMode) {
@@ -24,6 +26,8 @@ console.log(PlayMode.InRead);
 //any
 var notSure = 4;
 notSure = "string";
+// 懶人招
+nameString = 5;
 // void
 function func() { }
 // function
@@ -42,3 +46,21 @@ function createName(firstName, lastName) {
     }
     return firstName;
 }
+function getJSON(url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.send();
+        xhr.addEventListener("load", function () {
+            if (xhr.readyState === xhr.DONE) {
+                if (xhr.status === 200) {
+                    var result = JSON.parse(xhr.response);
+                    console.log(result);
+                    resolve(result);
+                }
+            }
+        });
+    });
+}
+var jsonUrl = "sample.json";
+// getJSON(jsonUrl).then(r => { });

@@ -1,14 +1,27 @@
 // boolean
-var isDone: boolean = false;
+const isDone: boolean = false;
 // number
-var min: number = 60;
+const min = 60 as number;
 // string
-var nameString: string = "lala";
+const nameString: string = "lala";
 // Array
-var idList: number[] = [1, 2, 3];
-var list: Array<number> = [1, 2, 3];
+const idList: number[] = [1, 2, 3];
+const list: Array<number> = [1, 2, 3];
 list.push(5);
 // list.push("5");
+
+
+
+
+
+// object type
+const sampleObject: {
+  value1: number;
+  value2: string;
+  value3?: any;
+  callBack: () => {};
+} = {
+}
 
 // enum
 enum PlayMode {
@@ -24,9 +37,11 @@ console.log(PlayMode.InRead);
 //any
 var notSure: any = 4;
 notSure = "string";
+// 懶人招
+(<any>nameString) = 5;
 
 // void
-function func(): void {}
+function func(): void { }
 
 // function
 
@@ -46,3 +61,28 @@ function createName(firstName: string, lastName?: string): string {
   }
   return firstName;
 }
+
+
+// function type
+type JsonReturn = {
+  value: number;
+  type: string;
+};
+function getJSON(url: string): Promise<JsonReturn> {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.send();
+    xhr.addEventListener("load", () => {
+      if (xhr.readyState === xhr.DONE) {
+        if (xhr.status === 200) {
+          const result: JsonReturn = JSON.parse(xhr.response);
+          console.log(result);
+          resolve(result);
+        }
+      }
+    });
+  });
+}
+const jsonUrl = "sample.json";
+// getJSON(jsonUrl).then(r => { });

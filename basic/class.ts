@@ -2,17 +2,25 @@ class Player {
   // property
   private playMode: string;
   private playerType: string;
+  // 建構式
   constructor(_playMode: string, _playerType: string) {
     this.playMode = _playMode;
     this.playerType = _playerType;
   }
   // static function
-  public static getPlayerState() {}
+  public static isSupportHTML5(): boolean {
+    return true;
+  }
 
-  public play() {}
-  public pause() {}
+  public play() { }
+  public pause() { }
+  public replay() { }
 }
 const myPlayer = new Player("inread", "DF");
+
+
+
+
 
 class Player2 implements IPlayer {
   // property
@@ -23,10 +31,10 @@ class Player2 implements IPlayer {
     this.playerType = playerParam.playerType;
   }
   // static function
-  public static getPlayerState() {}
+  public static getPlayerState() { }
 
-  public play() {}
-  public pause() {}
+  public play() { }
+
 }
 
 class MobilePlayer extends Player implements MPlayer {
