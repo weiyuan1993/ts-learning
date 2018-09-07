@@ -19,7 +19,7 @@ const sampleObject: {
   value1: number;
   value2: string;
   value3?: any;
-  callBack: Function;
+  callBack: () => void;
 } = {
   value1: 1,
   value2: "a",
@@ -70,10 +70,6 @@ type JsonReturn = {
   value: number;
   type: string;
 };
-interface asdfd {
-
-}
-
 function getJSON(url: string): Promise<JsonReturn> {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
