@@ -11,7 +11,11 @@ var list = [1, 2, 3];
 list.push(5);
 // list.push("5");
 // object type
-var sampleObject = {};
+var sampleObject = {
+    value1: 1,
+    value2: "a",
+    callBack: function () { }
+};
 // enum
 var PlayMode;
 (function (PlayMode) {
@@ -64,3 +68,4 @@ function getJSON(url) {
 }
 var jsonUrl = "sample.json";
 // getJSON(jsonUrl).then(r => { });
+getJSON(jsonUrl).then(function (r) { return console.log(r); });

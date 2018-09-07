@@ -1,8 +1,11 @@
 "use strict";
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -33,6 +36,8 @@ var Player2 = /** @class */ (function () {
     // static function
     Player2.getPlayerState = function () { };
     Player2.prototype.play = function () { };
+    Player2.prototype.pause = function () {
+    };
     return Player2;
 }());
 var MobilePlayer = /** @class */ (function (_super) {
@@ -48,3 +53,5 @@ var MobilePlayer = /** @class */ (function (_super) {
     };
     return MobilePlayer;
 }(Player));
+var m = new MobilePlayer();
+m.replay();

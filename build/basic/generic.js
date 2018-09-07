@@ -18,4 +18,12 @@ var myChildGameStore = {
     }
 };
 var allGames = myChildGameStore.getAll();
-var myAdultGame = {};
+var myAdultGameStore = {
+    games: [],
+    addGame: function (game) {
+        this.games.push(game);
+    },
+    getAll: function () {
+        return this.games;
+    }
+};
