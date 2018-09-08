@@ -97,7 +97,7 @@ const nameString: string = "lala";
 const idList: number[] = [1, 2, 3];
 const list: Array<number> = [1, 2, 3];
 list.push(5);
-list.push("5"); // 編譯器會報錯
+list.push("5"); //編譯器會報錯
 ```
 
 **物件型別定義**：
@@ -129,7 +129,6 @@ enum PlayMode {
 }
 var playMode: PlayMode = PlayMode.InRead;
 playMode = "inpage"; // 編輯器會報錯
-console.log(PlayMode.InRead);
 ```
 
 **any**:
@@ -141,6 +140,8 @@ notSure = "string";
 // 懶人招，不建議使用
 (<any>iAmString) = 5;
 ```
+
+使用 any 型別，變數就可以任意變更為其他型別的值，等同於寫原本的 js，不建議使用
 
 **function**:
 
@@ -368,7 +369,7 @@ let myAdultGameStore: Games<GameForAdult> = {
 };
 
 ```
-myChildGameStore, myAdultGameStore 都是實踐 `interface Games<T>`，所以裡面都必須要有 games, addGame(), getAll(), 但是因為使用了 generic ，所以這三個屬性裡的值可以彈性使用 GameForChild 或 GameForAdult (宣告時必須指定)。
+myChildGameStore, myAdultGameStore 都是實踐 `interface Games<T>`，所以裡面都必須要有 games, addGame(), getAll(), 但是因為使用了 generic ，所以這三個屬性裡的值可以彈性使用 GameForChild 或 GameForAdult (宣告時必須指定)。
 
 同理，應用在 `class` 也是一樣道理。
 
